@@ -1,0 +1,18 @@
+<resources>
+    <string name="add_note_block_icon_description">Create Note Block</string>
+    <string name="app_name">Simple Note Blocks</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="create">Create</string>
+    <string name="create_note_block_dialog_field_name_type">Type</string>
+    <string name="create_note_block_dialog_label_name">Name</string>
+    <string name="edit_note_block_dialog_title">Editing Note Block</string>
+    <string name="edit_note_block_dialog_label_name">Name</string>
+    <string name="create_note_block_dialog_title">New Note Block</string>
+    <string name="note_block_item_dropdown_option_edit">Edit</string>
+    <string name="note_block_item_dropdown_option_edit_description">Edit note</string>
+    <string name="note_block_item_dropdown_option_delete">Delete</string>
+    <string name="note_block_item_dropdown_option_delete_description">Delete note</string>
+    <string name="options">Options</string>
+    <string name="settings">Settings</string>
+</resources>
