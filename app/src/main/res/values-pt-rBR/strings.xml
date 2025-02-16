@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="add_note_block_icon_description">Criar Bloco de Notas</string>
+    <string name="cancel">Cancelar</string>
+    <string name="confirm">Confirmar</string>
+    <string name="create">Criar</string>
+    <string name="create_note_block_dialog_field_name_type">Tipo</string>
+    <string name="create_note_block_dialog_label_name">Nome</string>
+    <string name="edit_note_block_dialog_title">Editando Bloco de Notas</string>
+    <string name="edit_note_block_dialog_label_name">Nome</string>
+    <string name="create_note_block_dialog_title">Novo Bloco de Notas</string>
+    <string name="note_block_item_dropdown_option_edit">Editar</string>
+    <string name="note_block_item_dropdown_option_edit_description">Editar nota</string>
+    <string name="note_block_item_dropdown_option_delete">Deletar</string>
+    <string name="note_block_item_dropdown_option_delete_description">Deletar nota</string>
+    <string name="options">Opções</string>
+    <string name="settings">Configurações</string>
+    <string name="go_back">Voltar</string>
+    <string name="create_note">Criar Nota</string>
+    <string name="copied_to_clipboard">Copiado para o Teclado!</string>
+    <string name="invalid_url">URL inválida!</string>
+    <string name="edit">Editar</string>
+    <string name="open_url">Abrir URL</string>
+    <string name="copy">Copiar</string>
+    <string name="hide_secret">Esconder segredo</string>
+    <string name="show_secret">Mostrar segredo</string>
+</resources>

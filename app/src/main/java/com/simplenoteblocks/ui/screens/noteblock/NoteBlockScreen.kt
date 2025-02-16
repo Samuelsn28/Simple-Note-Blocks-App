@@ -34,6 +34,7 @@ import androidx.compose.ui.platform.ClipboardManager
 import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalUriHandler
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.style.TextOverflow
@@ -114,7 +115,7 @@ fun NoteBlockScreenRightSideTopBar(
             content = {
                 Icon(
                     imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
-                    contentDescription = "Go Back",
+                    contentDescription = stringResource(R.string.go_back),
                     tint = WhiteColor
                 )
             },
@@ -145,7 +146,7 @@ fun NoteBlockScreenLeftSideTopBar(
         content = {
             Icon(
                 imageVector = Icons.Rounded.Add,
-                contentDescription = "Create Note",
+                contentDescription = stringResource(R.string.create_note),
                 tint = WhiteColor
             )
         },
@@ -292,11 +293,12 @@ fun NoteListItemActions(
     val context = LocalContext.current
     NoteListItemActionButton(
         imageVector = ImageVector.vectorResource(R.drawable.ic_copy),
-        contentDescription = "Copy",
+        contentDescription = stringResource(R.string.copy),
         onClick = {
             val contentToCopy = getValueOfTextField(noteBlock.type.getTextFieldTypeToCopyContent())
             clipboardManager.setText(AnnotatedString(contentToCopy))
-            Toast.makeText(context, "Copied to Clipboard!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context,
+                context.getString(R.string.copied_to_clipboard), Toast.LENGTH_SHORT).show()
         }
     )
 
@@ -304,12 +306,13 @@ fun NoteListItemActions(
     if (noteBlock.type == NoteBlockType.Url) {
         NoteListItemActionButton(
             imageVector = ImageVector.vectorResource(R.drawable.ic_explore),
-            contentDescription = "Open URL",
+            contentDescription = stringResource(R.string.open_url),
             onClick = {
                 try {
                     uriHandler.openUri(getValueOfTextField(TextFieldTypes.Url))
                 } catch(_: IllegalArgumentException) {
-                    Toast.makeText(context, "Invalid URL", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context,
+                        context.getString(R.string.invalid_url), Toast.LENGTH_SHORT).show()
                 }
             }
         )
@@ -317,7 +320,7 @@ fun NoteListItemActions(
 
     NoteListItemActionButton(
         imageVector = ImageVector.vectorResource(R.drawable.ic_edit),
-        contentDescription = "Edit",
+        contentDescription = stringResource(R.string.edit),
         onClick = {
             navController.navigate(AppScreens.EditNote.route
                 .replace(

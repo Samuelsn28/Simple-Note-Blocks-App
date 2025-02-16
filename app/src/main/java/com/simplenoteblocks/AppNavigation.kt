@@ -11,6 +11,7 @@ import androidx.navigation.navArgument
 import com.simplenoteblocks.data.Note
 import com.simplenoteblocks.data.deserializeJsonStringToNote
 import com.simplenoteblocks.data.deserializeJsonStringToNoteBlock
+import com.simplenoteblocks.ui.screens.settings.SettingsScreen
 import com.simplenoteblocks.ui.screens.home.HomeScreen
 import com.simplenoteblocks.ui.screens.noteblock.NoteBlockScreen
 import com.simplenoteblocks.ui.screens.note.NoteScreen
@@ -30,7 +31,8 @@ enum class AppScreens(val route: String) {
     NoteBlock("noteBlock/${NavigationParameters.NOTE_BLOCK_DATAS}"),
     EditNote("editNote/${NavigationParameters.STATE}" +
                            "/${NavigationParameters.NOTE_BLOCK_DATAS}" +
-                           "/${NavigationParameters.NOTE_DATAS}")
+                           "/${NavigationParameters.NOTE_DATAS}"),
+    Settings("settings")
 }
 
 @Composable
@@ -74,6 +76,14 @@ fun AppNavigation(
             NoteRoute(
                 navController = navController,
                 backStackEntry = backStackEntry,
+                modifier = modifier
+            )
+        }
+        composable(
+            route = AppScreens.Settings.route,
+        ) { backStackEntry ->
+            SettingsRoute(
+                navController = navController,
                 modifier = modifier
             )
         }
@@ -133,6 +143,17 @@ fun NoteRoute(
         navController = navController,
         noteBlock = noteBlock,
         note = note,
+        modifier = modifier
+    )
+}
+
+@Composable
+fun SettingsRoute(
+    navController: NavHostController,
+    modifier: Modifier = Modifier
+) {
+    SettingsScreen(
+        navController = navController,
         modifier = modifier
     )
 }

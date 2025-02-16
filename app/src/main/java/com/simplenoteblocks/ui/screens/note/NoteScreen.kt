@@ -126,7 +126,7 @@ fun NoteScreenLeftSideTopBar(
         content = {
             Icon(
                 imageVector = Icons.Rounded.Check,
-                contentDescription = "Confirm",
+                contentDescription = stringResource(R.string.confirm),
                 tint = WhiteColor
             )
         },
@@ -305,10 +305,10 @@ fun SecretInputFieldTrailingIcon(
 
     if (viewModel.isSecretTextVisible) {
         iconImage = ImageVector.vectorResource(R.drawable.ic_visibility)
-        contentDescription = "Hide secret"
+        contentDescription = stringResource(R.string.hide_secret)
     } else {
         iconImage = ImageVector.vectorResource(R.drawable.ic_visibility_off)
-        contentDescription = "Show secret"
+        contentDescription = stringResource(R.string.show_secret)
     }
 
     IconButton(

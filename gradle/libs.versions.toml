@@ -1,5 +1,6 @@
 [versions]
 agp = "8.6.1"
+appcompat = "1.7.0"
 gson = "2.10.1"
 kotlin = "2.1.0"
 coreKtx = "1.15.0"
@@ -13,6 +14,7 @@ navigationCompose = "2.8.6"
 roomRuntime = "2.6.1"
 
 [libraries]
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycleRuntimeKtx" }
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }

@@ -1,5 +1,6 @@
 package com.simplenoteblocks
 
+import android.content.Context
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -9,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.compose.rememberNavController
 import com.simplenoteblocks.ui.theme.SimpleNotesTheme
 
@@ -27,7 +29,9 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun App(modifier: Modifier = Modifier){
+fun App(
+    modifier: Modifier = Modifier
+){
     val navController = rememberNavController()
 
     AppNavigation(

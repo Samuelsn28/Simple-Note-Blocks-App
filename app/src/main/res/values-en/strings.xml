@@ -1,6 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="add_note_block_icon_description">Create Note Block</string>
-    <string name="app_name" translatable="false">Simple Note Blocks</string>
     <string name="cancel">Cancel</string>
     <string name="confirm">Confirm</string>
     <string name="create">Create</string>

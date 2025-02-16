@@ -1,6 +1,5 @@
 package com.simplenoteblocks.ui.screens.home
 
-import android.util.Log
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -107,7 +106,7 @@ fun HomeScreenRoot(
         TopBar(
             backgroundColor = SecondaryColor,
             rightSide = { HomeScreenRightSideTopBar() },
-            leftSide = { HomeScreenLeftSideTopBar() }
+            leftSide = { HomeScreenLeftSideTopBar(navController = navController) }
         )
         HomeScreenContent(
             homeViewModel = homeViewModel,
@@ -454,7 +453,10 @@ fun HomeScreenRightSideTopBar(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun HomeScreenLeftSideTopBar(modifier: Modifier = Modifier) {
+fun HomeScreenLeftSideTopBar(
+    navController: NavHostController,
+    modifier: Modifier = Modifier
+) {
     IconButton(
         modifier = Modifier.padding(end = 12.dp),
         content = {
@@ -465,7 +467,9 @@ fun HomeScreenLeftSideTopBar(modifier: Modifier = Modifier) {
                 modifier = Modifier
             )
         },
-        onClick = {}
+        onClick = {
+            navController.navigate(AppScreens.Settings.route)
+        }
     )
 }
 
@@ -520,7 +524,6 @@ fun OpenEditDialog(
     modifier: Modifier = Modifier
 ) {
     if (homeViewModel.isOpenedEditDialog) {
-        Log.i("Aqui", "")
         EditNoteBlockDialog(
             homeViewModel = homeViewModel,
             onConfirmation = { updatedNoteBlock ->
